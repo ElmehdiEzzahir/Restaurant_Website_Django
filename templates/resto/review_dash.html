@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% block content %} {% include 'resto/dash_nav.html' %}
+
+<link rel="stylesheet" href="/static/css/review_dash.css">
+<div class="container">
+    <div class="start">
+        <h1>Welcome to Reviews dashbord</h1>
+        <img src="/static/imgs/review.png" alt="">
+    </div>
+    <div class="row_tab">
+        <div class="col">
+            <table class="table" width=500>
+                <thead>
+                    <tr>
+                        <th scope="col">review ID</th>
+                        <th scope="col">Full name</th>
+                        <th scope="col">email</th>
+                        <th scope="col">gender</th>
+                        <th scope="col">rating</th>
+                        <th scope="col">comment</th>
+                        <th scope="col">show in home page??</th>
+                        <th scope="col">manipulate</th>
+
+                        <!-- <th scope="col">Is Paid?</th>
+                    <th scope="col">Is Shiped?</th>
+                    <th scope="col">Edit</th> -->
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for rev in review %}
+                    <tr>
+                        <th scope="row">{{ rev.pk }}</th>
+                        <td>{{ rev.fname }}</td>
+                        <td>{{ rev.email }}</td>
+                        <td>{{ rev.gender }}</td>
+                        <td>{{ rev.rating }}</td>
+                        <td>{{ rev.comment }}</td>
+                        <td>
+                            {% if rev.is_showen %}
+                            <img src="/static/imgs/accept.png" alt="" style="width: 30px; height: 30px;"> {% else %}
+                            <img src="/static/imgs/close.png" alt="" style="width: 40px; height: 40px;"> {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'review_manipulation' rev.pk %}"><img src="/static/imgs/edit.png" alt="" style="width: 30px; height: 30px;"> </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

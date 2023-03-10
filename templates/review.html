@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" href="/static/css/review.css">
+<div class="home-bg" style="background-image: url('{% static 'imgs/1.jpg' %}')"></div>
+
+<!-- <h1>review damorix</h1> -->
+<form method="POST">
+    {% csrf_token %}
+    <div id="modal-container" class="modal-container">
+        <div class="modal">
+            <h2>Review Form</h2>
+            <div class="form-container">
+                <label id="label_f" for="fname">full name:</label>
+                <input required class="lform" type="text" placeholder="your full name" name="clname">
+            </div>
+            <div class="form-container">
+
+                <label id="label_f" for="fname">email:</label>
+                <input required class="lform" type="email" placeholder="your email" name="email">
+            </div>
+            <div class="form-container">
+                <label id="label_f" for="fname">your rating:</label>
+                <input required class="lform" type="text" placeholder="?/5" name="rating">
+            </div>
+            <div class="form-container">
+                <div class="radio">
+                    <label id="label_f" for="fname" class="gr">your gender:</label>
+                    <div class="mr">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="famel" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <label id="label_f" for="fname">your comment:</label>
+                <textarea rows="7" cols="32" name="comment"></textarea>
+                <!-- <input id="comment" required class="lform" type="text" placeholder="......" name="comment"> -->
+            </div>
+            <div class="modal-btn">
+                <a class="btn" href="{% url 'home' %}">Return to home page</a>
+                <button type="submit" id="submit">send your review</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+</form>
+
+<script src="/static/js/scripte.js">
+</script>
+
+{% endblock %}

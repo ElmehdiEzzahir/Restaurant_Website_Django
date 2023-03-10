@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: #edeef6;
+}
+
+.menu-tab-content {
+    display: flex;
+    width: 95%;
+    margin: 30px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.menu-tab-content .menu-item {
+    height: 300px;
+    width: 250px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: black;
+}
+
+.menu-tab-content .menu-item img {
+    height: 85%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    cursor: pointer;
+    color: black;
+    /* margin-left: 450px; */
+    margin-bottom: 20px;
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+}
+
+.btn:hover {
+    color: white;
+    background-color: #191f3a;
+}
+
+.form-container a {
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    cursor: pointer;
+    color: black;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.full-form-container {
+    /* background-color: black; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.full-form-container .form-container {
+    padding: 10px;
+    margin: 10px;
+}
+
+
+/* 
+#label_f {
+    background-color: brown;
+} */
+
+.full-form-container .form-container label {
+    color: black;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.full-form-container .form-container .lform {
+    width: 300px;
+    height: 30px;
+}
+
+#adresse_l {
+    width: 350px;
+}
+
+.modal-container {
+    background-color: rgb(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    border-radius: 5px;
+    width: 450px;
+    max-width: 100%;
+    padding: 30px 50px;
+    background-color: aliceblue;
+}
+
+.modal button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    cursor: pointer;
+    color: black;
+}
+
+.modal button:hover {
+    color: white;
+    background-color: #191f3a;
+}
+
+.modal h2 {
+    font-weight: 600;
+    margin-bottom: 40px;
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="/static/css/order_manipulation.css"> {% include 'resto/dash_nav.html' %}
+
+<div class="start">
+    <img src="/static/imgs/documents.png" alt="">
+    <h1>Welcome to order details page </h1>
+</div>
+<div class="container">
+    <div class="info">
+        <h2>client info:</h2>
+
+        <p>client id: {{ model.id }} </p>
+        <p>client order price: {{ model.price }}</p>
+        <p>client name: {{ model.namecl }}</p>
+        <p> client email: {{ model.email }}</p>
+        <p>client phone: {{ model.number }}</p>
+        <p>client adresse: {{ model.adressecl }}</p>
+    </div>
+    <div class="info">
+        <h2>client status:</h2>
+        <p>is payed?</p>
+
+        {% if model.ispayed %}
+        <img src="/static/imgs/accept.png" alt="" style="width: 30px; height: 30px;"> {% else %}
+        <img src="/static/imgs/close.png" alt="" style="width: 30px; height: 30px;">
+        <!-- <form method="POST">
+            {% csrf_token %}
+            <button type="submit">marke it as payed</button>
+        </form> -->
+        {% endif %}
+        <p>is shiped?</p>
+        {% if model.isshiped %}
+        <img src="/static/imgs/accept.png" alt="" style="width: 30px; height: 30px;"> {% else %}
+        <img src="/static/imgs/close.png" alt="" style="width: 30px; height: 30px;">
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">marke it as shiped and payed</button>
+        </form>
+    </div>
+</div>
+{% endif %} {% endblock %}

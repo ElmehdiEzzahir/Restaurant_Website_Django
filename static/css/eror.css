@@ -1,0 +1,99 @@
+/*404*/
+
+html {
+    margin: 0;
+}
+
+head {
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: indigo;
+}
+
+a:hover {
+    color: gray;
+}
+
+.flex {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.e404 {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+.inner {
+    text-align: center;
+}
+
+.inner h1 {
+    font-size: 180px;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 20px;
+    background: url(/static/images/404/404bg.jpg) center no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.inner a {
+    border-bottom: 1px solid black;
+    color: red;
+}
+
+.box1 {
+    width: 100%;
+}
+
+.box1 li {
+    width: 40%;
+    margin: 0;
+}
+
+.box1 a {
+    width: 50px;
+    padding: 12px 24px;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.box1 a:hover {
+    background-color: black;
+    color: #fff;
+}
+
+
+/*End 404*/

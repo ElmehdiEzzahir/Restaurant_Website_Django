@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: blue */
+}
+
+.container {
+    width: 100vw;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.start {
+    display: flex;
+    padding: 25px;
+}
+
+.start img {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.row_tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .row_tab .col table {
+    width: 90vw;
+}
+
+.row {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.row .card {
+    margin-right: 50px;
+    margin-bottom: 20px;
+    /* border: 1px black solid; */
+    /* margin-left: 50px; */
+}
+
+table thead tr th {
+    border-bottom: 1px solid #dddddddd;
+    padding: 15px;
+}
+
+table tbody tr td {
+    margin: 10px;
+    padding: 15px;
+    /* border-bottom: 1px solid black; */
+}
+
+.table {
+    border-collapse: collapse;
+    margin: 15 0;
+    min-width: 90vw;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    /* text-align: left; */
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddddd;
+}
+
+.table th,
+.table td {
+    padding: 15px 15px;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: #009879 2px solid;
+}
+
+
+/* .textg {
+    background-color: #6BB8F4;
+} */
+
+
+/* tr {
+    background-color: green;
+} */

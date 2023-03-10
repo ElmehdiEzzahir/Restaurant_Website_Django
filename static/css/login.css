@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.img {
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #05153f;
+}
+
+.login {
+    /* text-align: center; */
+    /* display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column; */
+    width: 100%;
+    background-color: #eff1f6;
+}
+
+
+/* .login form {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+} */
+
+.logincont {
+    text-align: start;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* border: 1px solid black; */
+    margin-top: 85px;
+    margin-left: 220px;
+    margin-right: 220px;
+    padding-left: 30px;
+    background-color: #fffefe;
+}
+
+.logincont img {
+    padding: 20px;
+    padding-left: 140px;
+    padding-right: 50px;
+}
+
+.logincont h4 {
+    font-weight: 400;
+    text-transform: capitalize;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+
+.logincont h1 {
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.logincont p {
+    color: red;
+}
+
+.form_cont {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 10px;
+}
+
+.form_cont label {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.form_cont input {
+    height: 25px;
+    width: 300px;
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+.btn {
+    /* margin: 10px;
+    background-color: #1e7da9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff; */
+    padding: 10px 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    cursor: pointer;
+    color: black;
+    margin: 10px;
+}
+
+.btn:hover {
+    color: #ffffff;
+    background-color: #191f3a;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    cursor: pointer;
+    color: black;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+
+/* 
+--dark: #0c1023;
+            --dark-light: #191f3a; */

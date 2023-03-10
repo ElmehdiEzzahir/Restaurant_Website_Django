@@ -1,0 +1,97 @@
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="/static/css/order.css">
+<form method="POST" class="f-form">
+    {% csrf_token %}
+    <div class="row">
+        <div class="row menu-tab-content " id="salade">
+            {% for sal in salade %}
+            <div class="menu-item">
+                <img src="{{ sal.img.url }}" alt="" width="150" height="100">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ sal.pk }}">
+                    <label class="form-check-label">{{ sal.name }}</label>
+                </div>
+                <div class="team-item-info">
+                    <p>{{ sal.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row menu-tab-content " id="plats">
+            {% for pl in plat %}
+            <div class="menu-item">
+                <img src="{{ pl.img.url }}" alt="" width="150" height="100">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ pl.pk }}">
+                    <label class="form-check-label">{{ pl.name }}</label>
+                </div>
+                <div class="team-item-info">
+                    <p>{{ pl.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row menu-tab-content" id="sandwich">
+            {% for sn in sandwich %}
+            <div class="menu-item">
+                <img src="{{ sn.img.url }}" alt="" width="150" height="100">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ sn.pk }}">
+                    <label class="form-check-label">{{ sn.name }}</label>
+                </div>
+                <div class="team-item-info">
+                    <p>{{ sn.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row menu-tab-content" id="drinks">
+            {% for dr in drinks %}
+            <div class="menu-item">
+                <img src="{{ dr.img.url }}" alt="" width="150" height="100">
+                <div class="form-group form-check">
+                    <input type="checkbox" name="items[]" class="form-check-input" value="{{ dr.pk }}">
+                    <label class="form-check-label">{{ dr.name }}</label>
+                </div>
+                <div class="team-item-info">
+                    <p>{{ dr.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="full-form-container">
+        <div class="form-container">
+            <label id="label_f" for="fname">full name:</label>
+            <input required class="lform" type="text" placeholder="your full name" name="clname">
+        </div>
+        <div class="form-container">
+            <label id="label_f" for="fname">email:</label>
+            <input required class="lform" type="email" placeholder="your email" name="email">
+        </div>
+        <div class="form-container">
+            <label id="label_f" for="fname">number:</label>
+            <input required class="lform" type="tel" placeholder="your number" name="number">
+        </div>
+        <div class="form-container">
+            <label id="label_f" for="fname">adresse:</label>
+            <input id="adresse_l" required class="lform" type="text" placeholder="your delivery adresse" name="adresse">
+            <button type="button" id="open" class="btn ">Place Order!</button>
+            <a class="btn" href="{% url 'home' %}">Return to home page</a>
+        </div>
+    </div>
+    
+    <div id="modal-container" class="modal-container">
+        <div class="modal">
+            <h2>are you sur you want to submit your order!</h2>
+            <button type="button" id="close">Go back</button>
+            <button type="submit" id="submit">submit my order</button>
+        </div>
+    </div>
+</form>
+
+
+
+<script src="/static/js/order.js">
+</script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="/static/css/order_manipulation.css"> {% include 'resto/dash_nav.html' %}
+
+<div class="start">
+    <img src="/static/imgs/review.png" alt="">
+    <h1>Welcome to review details page </h1>
+</div>
+<div class="container">
+    <div class="info">
+        <h2>custumer info:</h2>
+
+        <p>custumer name: {{ rev.fname }}</p>
+        <p>custumer review id: {{ rev.id }} </p>
+        <p> custumer rating {{ rev.rating }}</p>
+        <p>custumer gender: {{ rev.gender }}</p>
+        <p> custumer email: {{ rev.email }}</p>
+        <p>custumer comment: {{ rev.comment }}</p>
+    </div>
+    <div class="info">
+        <h2>client status:</h2>
+        <p>is showen in home page?</p>
+
+        {% if rev.is_showen %}
+        <img src="/static/imgs/accept.png" alt="" style="width: 30px; height: 30px;">
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">hide it in home page</button>
+        </form>
+        {% else %}
+        <img src="/static/imgs/close.png" alt="" style="width: 30px; height: 30px;">
+        <!-- <form method="POST">
+            {% csrf_token %}
+            <button type="submit">marke it as payed</button>
+        </form> -->
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">show it in home page</button>
+        </form>
+        {% endif %}
+
+
+    </div>
+</div>
+{% endblock %}

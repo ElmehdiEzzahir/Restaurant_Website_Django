@@ -1,0 +1,549 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+<!--   header start     -->
+
+<header class="header">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="logo">
+                <a href="#"><img src="/static/imgs/2.webp" alt="logo"></a>
+            </div>
+            <button type="button" class="nav-toggler">
+                <span></span>   
+            </button>
+            <nav class="nav">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#home">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about">About Us</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#our-menu">menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about">feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#location">location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}">login</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!--   header end     -->
+<!--   home start     -->
+<section class="home-section" id="home">
+    <div class="home-bg" style="background-image: url('{% static 'imgs/1.jpg' %}')"></div>
+    <div class="container">
+        <div class="row min-vh-100 align-items-center">
+            <div class="home-text">
+                <h1>NEWS CAFE MARRAKECH</h1>
+                <p>Since 2014, We served as images no disappointement ,<br> Coocked by the best and taste like home made<br>
+                    The Best cofee resto in marrakech
+                </p>
+                <a href="#our-menu" class="btn btn-default">our menu</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--   home end     -->
+
+<!--   about start     -->
+<section class="about-section sec-padding" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>about us</h2>
+            </div>
+        </div>
+        <div class="row_about">
+            <div class="about-text">
+                <h2>NEWS CAFE MARRAKECH</h2>
+                <p>Original and atypical setting, fast and refined cuisine, freshness and quality! Flavors from elsewhere… Original and atypical setting, fast and refined cuisine, freshness and quality… These are the ingredients of the News Café, and more. Immerse yourself in the heart of this timeless place, take full advantage of its friendly atmosphere and delight your taste buds with delicious dishes. Because if the decor is dreamy, diverse and varied, the menu is downright mouth watering. From the most classic to the most advanced, each dish will seduce you as much by its creativity, its presentation as by its of course taste. And then, satisfy your gluttony without breaking the bank… what could be more enticing?.</p>
+                <a href="#our-menu" class="btn btn-default">check our menu</a>
+            </div>
+            <div class="about-img">
+                <div class="img-box">
+                    <img src="/static/imgs/3.jpg" alt="" id="slide">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--   about end     -->
+
+<!--   menu start     -->
+<section class="menu-section" id="our-menu">
+    <div class="container">
+
+        <div class="row">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="menu-tabs">
+                <button type="button" class="menu-tab-item active" data-target="#salade">salades</button>
+                <button type="button" class="menu-tab-item" data-target="#plats">plats</button>
+                <button type="button" class="menu-tab-item" data-target="#sandwich">sandwiches</button>
+                <button type="button" class="menu-tab-item" data-target="#drinks">drinks</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row menu-tab-content active" id="salade">
+                {% for sal in salade %}
+                <div class="menu-item">
+                    <img src="{{ sal.img.url }}" alt="">
+                    <div class="team-item-info">
+                        <h2> {{ sal.name }}</h2>
+                        <p>{{ sal.price }} dhs</p>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="menu-item">
+                    <img src="/static/imgs/12.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> salade name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/13.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> salade name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/14.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> salade name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/static/imgs/15.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> salade name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/12.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> salade name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/static/imgs/13.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> salade name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>-->
+            </div>
+            <div class="row menu-tab-content " id="plats">
+                {% for pl in plat %}
+                <div class="menu-item">
+                    <img src="{{ pl.img.url }}" alt="">
+                    <div class="team-item-info">
+                        <h2>{{ pl.name }}</h2>
+                        <p>{{ pl.price }}$</p>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="menu-item">
+                        <img src="/static/imgs/17.jpg" alt="">
+                        <div class="team-item-info">
+                            <h2> plat name</h2>
+                            <p>32,4$</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="/static/imgs/18.jpg" alt="">
+                        <div class="team-item-info">
+                            <h2> plat name</h2>
+                            <p>32,4$</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="/static/imgs/19.jpg" alt="">
+                        <div class="team-item-info">
+                            <h2> plat name</h2>
+                            <p>32,4$</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="/static/imgs/20.jpg" alt="">
+                        <div class="team-item-info">
+                            <h2> plat name</h2>
+                            <p>32,4$</p>
+                        </div>
+            </div>-->
+
+            </div>
+            <div class="row menu-tab-content" id="sandwich">
+                {% for sn in sandwich %}
+                <div class="menu-item">
+                    <img src="{{ sn.img.url }}" alt="">
+                    <div class="team-item-info">
+                        <h2>{{ sn.name }}</h2>
+                        <p>{{ sn.price }}$</p>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- <div class="menu-item">
+                    <img src="/static/imgs/21.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> sandwich name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/21.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> sandwich name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/21.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> sandwich name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/21.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> sandwich name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div> -->
+            </div>
+            <div class="row menu-tab-content" id="drinks">
+                {% for dr in drinks %}
+                <div class="menu-item">
+                    <img src="{{ dr.img.url }}" alt="">
+                    <div class="team-item-info">
+                        <h2>{{ dr.name }}</h2>
+                        <p>{{ dr.price }}$</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- <div class="menu-item">
+                    <img src="/static/imgs/23.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> drinks name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/24.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> drinks name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/25.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> drinks name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="/static/imgs/22.jpg" alt="">
+                    <div class="team-item-info">
+                        <h2> drinks name</h2>
+                        <p>32,4$</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <a href="{% url 'order' %}" class="btn" >place an order</a>
+    </div>
+</section>
+
+<!--   menu end     -->
+
+<!--   reviews start     -->
+<section class="about-section sec-padding" id="about">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.4/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2> cutumer's reviews</h2>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="section-title">
+            <h2>cutumer's reviews</h2>
+            <span class="section-separator"></span>
+            <p>what our client said</p>
+        </div>
+    </div>
+    <div class="testimonials-carousel-wrap">
+        <div class="listing-carousel-button listing-carousel-button-next"><i class="fa fa-caret-right" style="color: #fff"></i></div>
+        <div class="listing-carousel-button listing-carousel-button-prev"><i class="fa fa-caret-left" style="color: #fff"></i></div>
+        <div class="testimonials-carousel">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for mn in rev %} 
+                        {% if mn.is_showen %}
+                            <div class="swiper-slide">
+                                <div class="testi-item">
+                                    {% if mn.gender == 'female' %}
+                                    <div class="testi-avatar"><img src="/static/imgs/female.png"></div>{% else %}
+                                    <div class="testi-avatar"><img src="/static/imgs/male.png"></div>{% endif %}
+                                    <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                    <div class="testimonials-text">
+                                        {% if mn.rating > 4.5 %}
+                                        <div class="listing-rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        {% elif mn.rating < 4.5 and mn.rating > 4 %}
+                                            <div class="listing-rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-full"></i>
+                                            </div>
+                                            {% elif mn.rating <= 4 and mn.rating > 3.5 %}
+                                                <div class="listing-rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-o"></i>
+                                                    <!-- <i class="fa fa-star-half-empty"></i> -->
+                                                </div>
+                                                {% elif mn.rating <= 3.5 and mn.rating > 3 %}
+                                                    <div class="listing-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-full"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="listing-rating">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                    </div>
+                                                    {% endif %}
+                                                    <p>{{ mn.comment }}</p>
+                                                    <!-- <a href="#" class="text-link"></a> -->
+                                                    <div class="testimonials-avatar">
+                                                        <h3>{{ mn.fname }}</h3>
+                                                        <h4>{{ mn.commented_on }}</h4>
+                                                    </div>
+                                    </div>
+                                    <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                    <!-- <div class="swiper-slide">
+                        <div class="testi-item">
+                            <div class="testi-avatar"><img src="/static/imgs/male.png"></div>
+                            <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                            <div class="testimonials-text">
+                                <div class="listing-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-full"></i>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                    make a type specimen book.</p>
+                                <a href="#" class="text-link"></a>
+                                <div class="testimonials-avatar">
+                                    <h3>Doe Boe</h3>
+                                    <h4>Director</h4>
+                                </div>
+                            </div>
+                            <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                        </div>
+                    </div> -->
+                    <!--third-->
+
+                    <!-- <div class="swiper-slide">
+                        <div class="testi-item">
+                            <div class="testi-avatar"><img src="/static/imgs/female.png"></div>
+                            <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                            <div class="testimonials-text">
+                                <div class="listing-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                    make a type specimen book.</p>
+                                <a href="#" class="text-link"></a>
+                                <div class="testimonials-avatar">
+                                    <h3>Boe Doe</h3>
+                                    <h4>Developer</h4>
+                                </div>
+                            </div>
+                            <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                        </div>
+                    </div> -->
+
+                    <!--fourth-->
+                    <!-- <div class="swiper-slide">
+                        <div class="testi-item">
+                            <div class="testi-avatar"><img src="/static/imgs/male.png"></div>
+                            <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                            <div class="testimonials-text">
+                                <div class="listing-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                                    make a type specimen book.</p>
+                                <a href="#" class="text-link"></a>
+                                <div class="testimonials-avatar">
+                                    <h3>Doe John</h3>
+                                    <h4>Designer</h4>
+                                </div>
+                            </div>
+                            <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                        </div>
+                    </div> -->
+                    <!--testi end-->
+                    <!-- <div class="swiper-slide">
+                        <div class="testi-item">
+                            <div class="testi-avatar"><img src="/static/imgs/male.png"></div>
+                            <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                            <div class="testimonials-text">
+                                <div class="listing-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <p>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <a href="#" class="text-link"></a>
+                                <div class="testimonials-avatar">
+                                    <h3>Doe John</h3>
+                                    <h4>Designer</h4>
+                                </div>
+                            </div>
+                            <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="{% url 'review' %}" id="open" class="btn ">let your review!</a>
+
+
+    <!-- <div class="tc-pagination"></div> -->
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.4/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!--   reviews end     -->
+{% comment %} {% for mn in rev %} {{ mn.fname }} {{ mn.commented_on }} {% endfor %} {% endcomment %}
+
+<!--   location start     -->
+
+<div class="map-container" id="location">
+    <h1>our location is here</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.258317307527!2d-8.018150785348896!3d31.626776949045475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafeeed2e237175%3A0x1610a73a7368d055!2sNews%20Caf%C3%A9!5e0!3m2!1sfr!2sma!4v1649991752516!5m2!1sfr!2sma"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+
+
+<!--   location  end     -->
+<section class="footercl" id="foot">
+     <div class="foot_bg" style="background-image: url('{% static 'imgs/1.jpg' %}')"></div>
+    <div class="foot_cont">
+        <footer>
+            <div class="row3">
+                <h1>Contacter-nous</h1>
+
+                <ul>
+                    <li>+212 524 474 580</li>
+                    <li>(+212) 524 449 999</li>
+                    <li>newscafemarrakech@gmail.com</li>
+                </ul>
+            </div>
+
+            <div class="row3">
+                <h1>Nos Horaire</h1>
+
+                <ul>
+                    <li>Du lundi au Vendredi</li>
+                    <li>9h - 13h & 14h30 - 18h30</li>
+                    <li>Samedi 9h - 13h</li>
+                </ul>
+            </div>
+
+            <div class="row3">
+                <div class="soc">
+                    <h1>Social media</h1>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/newscafemarrakech/?ref=page_internal"><img src="/static/imgs/facebook.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/c/NewsCaf%C3%A9Marrakesh/featured"><img src="/static/imgs/youtube.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/newscafemarrakech/"><img src="/static/imgs/instagram.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    </footer>
+</section> 
+
+<script src="/static/js/scripte.js">
+</script>
+{% endblock %}

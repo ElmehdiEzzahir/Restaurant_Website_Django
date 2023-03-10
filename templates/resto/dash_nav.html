@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/static/css/dash_nav.css">
+<header>
+    <p class="logo"> NEWS CAFE MARRAKECH Dashboard</p>
+    <nav>
+        <ul class="nav_links">
+            <li>
+                <a href="{% url 'dash'%}">oreders</a>
+            </li>
+            <li>
+                <a href="{% url 'menu'%}">menu</a>
+
+            </li>
+            <li>
+                <a href="{% url 'review_dash'%}">review</a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <a class="cta" href="{% url 'logout' %}"> <button> logout </button></a>
+        <a class="cta" href="{% url 'home' %}"> <button> Return to home page </button></a>
+    </div>
+
+</header>
+<!-- <div class="nav_cont">
+    <a href="{% url 'dash'%}">oreders</a>
+    <a href="{% url 'menu'%}">menu</a>
+    <a href="{% url 'review_dash'%}">review</a>
+    <a href="{% url 'logout' %}">logout</a>
+    <a class="btn" href="{% url 'home' %}">Return to home page</a>
+
+</div> -->

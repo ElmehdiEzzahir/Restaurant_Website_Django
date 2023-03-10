@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="/static/css/order_confi.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<section class="order">
+    <div class="container" style="background-image: url('{% static 'imgs/1.jpg' %}')"></div>
+    <div class="all">
+        <div class="jus">
+            <div class="text">
+                <img src="/static/imgs/deal.png" alt="">
+                <h1>Thank you for your order</h1>
+                <p>You should receive a confirmation email soon.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3 class="pb">Order Summary:</h3>
+                {% for item in items %}
+                <p>{{ item.name }}: {{ item.price }}</p>
+                {% endfor %}
+                <p>Total: {{ price }}</p>
+            </div>
+        </div>
+        <div class="btn">
+            <a href="{% url 'home' %}">Go to the homepage and pay cash later</a>
+            <form action="{% url 'create-checkout-session' oreder_id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="checkout-button">pay with your card</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+{% comment %}
+
+<p>{{ namecl }}</p>
+<p>{{ email }}</p>
+<p>{{ number }}</p>
+<p>{{ adresse }}</p>
+<p>{{ oreder_id }}</p> {% endcomment %}
+
+
+
+
+<!-- <h1>order submitted </h1>
+<p>total price:{{ price }}
+</p> -->
+{% endblock %}

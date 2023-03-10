@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="/static/css/dash.css"> {% block bar %} {% include 'resto/dash_nav.html' %} {% endblock bar %}
+
+
+<!-- <h1>menu</h1> -->
+<!-- {% for mn in menu %} {{ mn.name }} {{ mn.price }} {{ mn.category }} {% endfor %} {{ menu }} {{ menu.category }} -->
+
+<div class="container">
+    <div class="start">
+        <h1>Welcome to Menu dashbord</h1>
+        <img src="/static/imgs/menu.png" alt="">
+    </div>
+
+
+    <div class="row_tab">
+        <a class="btn" href="{% url 'menu_item_creation' %}">Create Menu items</a>
+        <div class="col">
+            <table class="table" style="margin-bottom: 20px; ">
+                <thead>
+                    <tr>
+                        <th scope="col">item ID</th>
+                        <th scope="col">item Name</th>
+                        <th scope="col">item Price</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for mn in menuu %}
+                    <tr>
+                        <th scope="row">{{ mn.pk }}</th>
+                        <td>{{ mn.name }}</td>
+                        <td>{{ mn.price }}</td>
+                        <td>
+                            <a href="{% url 'updateOrder' mn.pk %}"><img src="/static/imgs/edit.png" alt="" style="width: 30px; height: 30px;"> </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'deletem' mn.pk %}"><img src="/static/imgs/delete.png" alt="" style="width: 30px; height: 30px;"> </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

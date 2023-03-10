@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %} {% include 'resto/dash_nav.html' %}
+
+<link rel="stylesheet" href="/static/css/form.css">
+
+
+
+<div class="cont">
+    <div class="cont2">
+        <div class="cont3">
+            <img src="/static/imgs/idea.png" alt="">
+            <h1>menu item creation</h1>
+        </div>
+        <form class="form" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %} {{form.as_p}}
+            <input class="btn" type="submit" name="submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
